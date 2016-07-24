@@ -13,12 +13,15 @@ courses = []
 
 COURSE_LIST.each { |c| courses << Course.create!( name: c ) }
 
-500.times do |i|
+puts "Seeding database with fake data (this might take a while, dataset at scale )."
+puts "Generating 5k fake students, with multiple classes and grades ..."
+
+5_000.times do |i|
   # long term - use FactoryGirl for this
   s = Student.create!(
     first_name:     Faker::Name.first_name,
     last_name:      Faker::Name.last_name,
-    email:          Faker::Name.last_name + i.to_s + "@#{Faker::Internet.domain_name}"
+    email:          Faker::Internet.user_name + i.to_s + "@#{Faker::Internet.domain_name}"
   )
 
   # Adds 2-6 classes for each student and a random grade
