@@ -33,8 +33,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # debugger console
+  gem 'pry', '~> 0.10.4'
+
+  # BDD Test and Matchers
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
+
+  # fake data generator
+  gem 'faker', '~> 1.6', '>= 1.6.5'
 end
 
 group :development do

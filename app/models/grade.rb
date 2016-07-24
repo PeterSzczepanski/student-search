@@ -1,4 +1,4 @@
 class Grade < ActiveRecord::Base
-  belongs_to :grade
+  belongs_to :course
   belongs_to :student
 end
