@@ -11,5 +11,10 @@ class StudentsController < ApplicationController
     else
       @students = []
     end
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: StudentsPresenter.new(@students).as_h }
+    end
   end
 end
