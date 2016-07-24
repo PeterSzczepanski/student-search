@@ -1,0 +1,40 @@
+<article class="student-details">
+  <h1>Student Record - {{ student.id }}</h1>
+
+  <h2>Details</h2>
+
+  <table class="table table-striped">
+    <tr>
+      <th>First Name</th>
+      <td>{{ student.first }}</th>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td>{{ student.last }}</th>
+    </tr>
+    <tr>
+      <th>Email Address</th>
+      <td>{{ student.email }}</th>
+    </tr>
+    <tr>
+      <th>Average Grade (GPA)</th>
+      <td>{{ student.average_gpa }}</th>
+    </tr>
+  </table>
+
+  <h2>Courses</h2>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th>Grade</th>
+    </tr>
+    <tr ng-repeat="course in student.studentClasses">
+      <td>{{ course.id }}</td>
+      <td>{{ course.name }}</td>
+      <td>{{ course.grade }}</td>
+    </tr>
+  </table>
+
+</article>

@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bower-rails'
 
+gem 'angular-rails-templates'
+gem "sprockets", "~> 2.0"
+
 group :development, :test do
   # debugger console
   gem 'pry', '~> 0.10.4'

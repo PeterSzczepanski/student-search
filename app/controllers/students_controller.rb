@@ -17,4 +17,11 @@ class StudentsController < ApplicationController
       format.json { render json: StudentsPresenter.new(@students).as_h }
     end
   end
+
+  def show
+    @student = Student.includes(:grades).includes(:courses).find_by_id(params[:id])
+    respond_to do |format|
+      format.json { render json: StudentPresenter.new(@student).as_h }
+    end
+  end
 end
